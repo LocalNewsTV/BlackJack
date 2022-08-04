@@ -76,6 +76,9 @@ tallyScore = (whoseTurn, card) => {
     else
         $(`#${whoseTurn.scoreBox}`).html(whoseTurn.hand)
 }
+const cardsInDeck = () => {
+    $('#cardsInDeck').html(currentDeck.length);
+}
 /**********************************************************************
  * hitAction() - runs the steps involved for drawing a card
  **********************************************************************/
@@ -84,7 +87,7 @@ const hitAction = (whoseTurn) => {
     const body = createCardBody(draw);
     $(`#${whoseTurn.id}`).append(body);
     tallyScore(whoseTurn, draw);
-
+    cardsInDeck();
 }
 /*********************************************************************
  * createCardBody() - Creates and returns a card container that will be 
