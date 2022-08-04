@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="container">
+      <h1 id="winner"></h1>
+        <div id="counters">
+            <p>Player Score: <span id="playerScore">0</span></p>
+            <p>Dealer Score: <span id="dealerScore">0</span></p>
+            <p>Money: <span id="playerMoney">1000</span></p>
+            <p>Bet: <span id="playerBet">0</span></p>
+        </div>
+        <div id="table">
+            <div id="dealer"></div>
+            <div id="player"></div>
+        </div>
+        <div id="game">
+            <button id="hit">Hit</button>
+            <button id="stay">Stay</button>
+        </div>
+        <div id="nogame">
+            <input id="betAmount" type="number" step="50" min="50" max="1000" value="50">
+            <button id="bet" for="betAmount">Deal</button>
+        </div>
+    </div>
+	<script src="script.js"></script>
+  </body>
+</html>
