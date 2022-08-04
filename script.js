@@ -56,7 +56,11 @@ tallyScore = (whoseTurn, card) => {
     if(Number.isNaN(parseInt(cardVal))){ //triggered by the card being a faceCard or Ace
         if(cardVal.includes("A")){ //Then we are an Ace
             cardVal = 11;
-            whoseTurn.ace += 1;
+            if(cardVal + whoseTurn.hand < 21)
+                whoseTurn.ace += 1;
+            else{
+                cardVal = 1;
+            }
         }
         else{
             cardVal = 10;
@@ -65,7 +69,7 @@ tallyScore = (whoseTurn, card) => {
     whoseTurn.hand += parseInt(cardVal)
     if(whoseTurn.hand > 21 && whoseTurn.ace > 0){
         whoseTurn.hand -= 10;
-        whoseTurn.ace -= 0;
+        whoseTurn.ace -= 1;
     }
     if(whoseTurn.hand > 21){
         $(`#${whoseTurn.scoreBox}`).html("BUST");
